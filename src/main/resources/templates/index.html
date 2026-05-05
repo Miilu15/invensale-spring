@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>INVENSALe</title>
+</head>
+<body>
+
+<h2>Registrar Producto</h2>
+
+<form th:action="@{/guardar}" method="post">
+    Nombre: <input type="text" name="nombre"><br>
+    Precio: <input type="text" name="precio"><br>
+    <button type="submit">Guardar</button>
+</form>
+
+<h2>Lista</h2>
+
+<ul>
+    <li th:each="p : ${productos}">
+        <span th:text="${p.nombre}"></span> -
+        <span th:text="${p.precio}"></span>
+    </li>
+</ul>
+
+</body>
+</html>
